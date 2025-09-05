@@ -7,23 +7,20 @@ trigger:
 - main
 
 pool:
-  name: Default
+  name: Default   
 
 variables:
-  buildConfiguration: 'Release'
-  solution: 'MovieStore/MovieShop/MovieShop.sln'
-
-#steps:
-#- script: dotnet build --configuration $(buildConfiguration)
-#  displayName: 'dotnet build $(buildConfiguration)'
+  buildConfiguration: Release
+  solution: MovieShop/MovieShop.sln
 
 steps:
 - checkout: self
 
+# Install the SDK that matches your target (your project shows net8.0)
 - task: UseDotNet@2
   inputs:
     packageType: sdk
-    version: 9.0.x
+    version: 8.0.x
 
 - task: DotNetCoreCLI@2
   displayName: Restore
