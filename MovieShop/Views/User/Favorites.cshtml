@@ -1,0 +1,29 @@
+﻿@using ApplicationCore.Models          
+@model PagedResultSet<MovieCardModel>  
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "My Favorites";
+}
+
+<h2 class="mb-3">My Favorites</h2>
+
+@if (!(Model?.Data?.Any() ?? false))
+{
+    <div class="alert alert-info">You don’t have any favorite movies yet.</div>
+}
+else
+{
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+        @foreach (var m in Model.Data)
+        {
+            <div class="col">                
+                @await Html.PartialAsync("_MovieCard", m) 
+            </div>
+        }
+    </div>
+
+    <div class="mt-3">
+        @await Html.PartialAsync("_Pager", Model)  @* pager needs the whole PagedResultSet *@
+    </div>
+}

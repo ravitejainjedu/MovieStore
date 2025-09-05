@@ -1,0 +1,26 @@
+﻿@using ApplicationCore.Models
+@model PagedResultSet<MovieCardModel>
+@{
+    Layout = "_Layout";
+    var q = (string?)ViewBag.Query ?? "";
+}
+
+<h3 class="mb-3">Results for “@q” <small class="text-muted">(@Model.TotalCount)</small></h3>
+
+@if (Model.Data.Any())
+{
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+        @foreach (var m in Model.Data)
+        {
+            <div class="col">
+                @await Html.PartialAsync("_MovieCard", m)
+            </div>
+        }
+    </div>
+
+    @await Html.PartialAsync("_Pager", Model)
+}
+else
+{
+    <div class="alert alert-info">No movies matched “@q”. Try a different title.</div>
+}

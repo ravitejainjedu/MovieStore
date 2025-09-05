@@ -1,0 +1,44 @@
+@model IReadOnlyList<ApplicationCore.Models.PurchaseDetailsModel>
+@{ Layout = "_Layout"; }
+<h2 class="mb-3">Your Purchases</h2>
+<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+@foreach (var p in Model)
+{
+  <div class="col">
+    <div class="card h-100 shadow-sm">
+      <img src="@p.PosterUrl" class="card-img-top" alt="@p.Title" />
+      <div class="card-body d-flex flex-column">
+        <h6 class="card-title">@p.Title</h6>
+        <button class="btn btn-dark mt-auto" data-bs-toggle="modal" data-bs-target="#purchaseModal-@p.MovieId">Purchase Details</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal per card -->
+  <div class="modal fade" id="purchaseModal-@p.MovieId" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5">Purchase Details</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex gap-3">
+            <img src="@p.PosterUrl" style="width:90px" class="rounded shadow" />
+            <div class="flex-grow-1">
+              <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between"><span>Purchased Date</span><span>@p.PurchaseDate.ToString("MMM dd, yyyy")</span></li>
+                <li class="list-group-item d-flex justify-content-between"><span>Price</span><span>@p.Price.ToString("C")</span></li>
+                <li class="list-group-item d-flex justify-content-between"><span>Purchase Number</span><span>@p.PurchaseNumber</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-primary" href="/Movies/Details/@p.MovieId">Go to Movie</a>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+</div>

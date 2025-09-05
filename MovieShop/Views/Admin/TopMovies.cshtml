@@ -1,0 +1,35 @@
+@using ApplicationCore.Models
+@model PagedResultSet<AdminTopMovieModel>
+@{
+    ViewData["Title"] = "Top Purchased Movies";
+    Layout = "_Layout";
+}
+
+<h3 class="mb-3">Top Purchased Movies</h3>
+
+<form method="get" class="row g-2 mb-3">
+    <div class="col-auto"><input type="date" class="form-control" name="from" value="@ViewBag.From" /></div>
+    <div class="col-auto"><input type="date" class="form-control" name="to" value="@ViewBag.To" /></div>
+    <div class="col-auto"><button class="btn btn-primary">Search</button></div>
+</form>
+
+<table class="table table-sm table-striped align-middle">
+    <thead>
+        <tr><th style="width:70px">#</th><th>Title</th><th class="text-end" style="width:160px">Total Purchases</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model.Data)
+        {
+            <tr>
+                <td>@r.MovieId</td>
+                <td>
+                    <img src="@r.PosterUrl" class="rounded me-2" style="height:40px;width:28px;object-fit:cover" alt="" />
+                    <a href="@Url.Action("Details", "Movies", new { id = r.MovieId })">@r.Title</a>
+                </td>
+                <td class="text-end">@r.TotalPurchases</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@await Html.PartialAsync("_Pager", Model)

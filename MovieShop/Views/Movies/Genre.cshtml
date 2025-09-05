@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ApplicationCore.Models.MovieCardModel>
+@{
+    ViewData["Title"] = "Movies By Genre";
+    var items = Model?.ToList() ?? new List<ApplicationCore.Models.MovieCardModel>();
+}
+
+<div class="container-xl">
+    
+    @if (!items.Any())
+    {
+        <div class="alert alert-info">No movies found for this genre.</div>
+    }
+    else
+    {
+        <div class="row g-3">
+            @foreach (var m in items)
+            {
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                    <partial name="_MovieCard" model="m" />
+                </div>
+            }
+        </div>
+    }
+</div>

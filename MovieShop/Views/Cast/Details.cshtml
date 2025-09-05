@@ -1,0 +1,23 @@
+@model ApplicationCore.Models.CastDetailsModel
+@{ Layout = "_Layout"; }
+<div class="row g-4">
+  <div class="col-md-4">
+    <img class="img-fluid rounded shadow" src="@Model.ProfilePath" alt="@Model.Name" />
+  </div>
+  <div class="col-md-8">
+    <h2>@Model.Name</h2>
+    <h4 class="mt-4">Movies</h4>
+    <div class="list-group">
+      @foreach (var m in Model.Movies)
+      {
+        <a class="list-group-item list-group-item-action d-flex align-items-center" href="/Movies/Details/@m.movieId">
+          <img src="@m.posterUrl" alt="@m.title" class="rounded me-3" style="width:48px; height:48px; object-fit:cover;" />
+          <div>
+            <div>@m.title</div>
+            <small class="text-muted">Character: @m.character</small>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</div>

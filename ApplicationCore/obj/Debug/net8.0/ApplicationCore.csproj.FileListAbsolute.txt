@@ -1,0 +1,23 @@
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\bin\Debug\net8.0\ApplicationCore.deps.json
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\bin\Debug\net8.0\ApplicationCore.dll
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\bin\Debug\net8.0\ApplicationCore.pdb
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\obj\Debug\net8.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\obj\Debug\net8.0\ApplicationCore.AssemblyInfoInputs.cache
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\obj\Debug\net8.0\ApplicationCore.AssemblyInfo.cs
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\obj\Debug\net8.0\ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\obj\Debug\net8.0\ApplicationCore.sourcelink.json
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\obj\Debug\net8.0\ApplicationCore.dll
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\obj\Debug\net8.0\refint\ApplicationCore.dll
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\obj\Debug\net8.0\ApplicationCore.pdb
+C:\Ravi Teja files\Antra Assignments\.NET Core Assignment\ApplicationCore\obj\Debug\net8.0\ref\ApplicationCore.dll
+C:\Ravi Teja files\MovieStore\ApplicationCore\bin\Debug\net8.0\ApplicationCore.deps.json
+C:\Ravi Teja files\MovieStore\ApplicationCore\bin\Debug\net8.0\ApplicationCore.dll
+C:\Ravi Teja files\MovieStore\ApplicationCore\bin\Debug\net8.0\ApplicationCore.pdb
+C:\Ravi Teja files\MovieStore\ApplicationCore\obj\Debug\net8.0\ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Ravi Teja files\MovieStore\ApplicationCore\obj\Debug\net8.0\ApplicationCore.AssemblyInfoInputs.cache
+C:\Ravi Teja files\MovieStore\ApplicationCore\obj\Debug\net8.0\ApplicationCore.AssemblyInfo.cs
+C:\Ravi Teja files\MovieStore\ApplicationCore\obj\Debug\net8.0\ApplicationCore.csproj.CoreCompileInputs.cache
+C:\Ravi Teja files\MovieStore\ApplicationCore\obj\Debug\net8.0\ApplicationCore.dll
+C:\Ravi Teja files\MovieStore\ApplicationCore\obj\Debug\net8.0\refint\ApplicationCore.dll
+C:\Ravi Teja files\MovieStore\ApplicationCore\obj\Debug\net8.0\ApplicationCore.pdb
+C:\Ravi Teja files\MovieStore\ApplicationCore\obj\Debug\net8.0\ref\ApplicationCore.dll

@@ -1,0 +1,11 @@
+@model IEnumerable<ApplicationCore.Models.MovieCardModel>
+@{ Layout = "_Layout"; }
+<h2 class="mb-3">Top Movies</h2>
+<div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+@foreach (var m in Model)
+{
+    <div class="col">
+        @await Html.PartialAsync("_MovieCard", m)
+    </div>
+}
+</div>

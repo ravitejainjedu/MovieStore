@@ -1,0 +1,26 @@
+﻿@* Views/Shared/_Pager.cshtml *@
+@using ApplicationCore.Models
+@model PagedResultSetBase
+
+<nav aria-label="page navigation">
+    <ul class="pagination justify-content-center">
+        <li class="page-item @(Model.HasPrevious ? "" : "disabled")">
+            <a class="page-link" href="?page=@(Model.Page - 1)&pageSize=@Model.PageSize">Prev</a>
+        </li>
+
+        @{
+            var start = Math.Max(1, Model.Page - 2);
+            var end = Math.Min(Model.TotalPages, Model.Page + 2);
+        }
+        @for (var i = start; i <= end; i++)
+        {
+            <li class="page-item @(i == Model.Page ? "active" : "")">
+                <a class="page-link" href="?page=@i&pageSize=@Model.PageSize">@i</a>
+            </li>
+        }
+
+        <li class="page-item @(Model.HasNext ? "" : "disabled")">
+            <a class="page-link" href="?page=@(Model.Page + 1)&pageSize=@Model.PageSize">Next</a>
+        </li>
+    </ul>
+</nav>
