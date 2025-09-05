@@ -11,10 +11,14 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  solution: 'MovieStore/MovieShop/MovieShop.sln'
+
+#steps:
+#- script: dotnet build --configuration $(buildConfiguration)
+#  displayName: 'dotnet build $(buildConfiguration)'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+- checkout: self
 
 - task: UseDotNet@2
   inputs:
@@ -22,8 +26,21 @@ steps:
     version: 9.0.x
 
 - task: DotNetCoreCLI@2
+  displayName: Restore
+  inputs:
+    command: restore
+    projects: '$(solution)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build
   inputs:
     command: build
-    projects: '**/*.csproj'            # or '**/*.sln' if no solution file
+    projects: '$(solution)'
     arguments: '--configuration $(buildConfiguration)'
-    workingDirectory: '$(Build.SourcesDirectory)'
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration) --no-build'
